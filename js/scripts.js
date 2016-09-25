@@ -17,4 +17,14 @@ $(function() {
     closeOnClick:true,
     prependTo:'nav .wrapper'
   });
+
+  $(window).on('scroll', function() {    
+    var scroll = $(window).scrollTop();
+
+    if (scroll > 70) {
+      $("nav, header + section").addClass("fixed");
+    } else {
+      $("nav, header + section").removeClass("fixed");
+    }
+  });
 });
